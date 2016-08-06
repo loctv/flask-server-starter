@@ -54,7 +54,7 @@ After that, you should create your admin user, run the following command:
 and follow the instructions, this will create your first user and first admin role.
 
 
-Edit the settings.py and change the settings to suit your needs, sepcifically you can change Flask security settings, security keys, Mongodb settings,and Flask mail.
+Edit the settings.py and change the settings to suit your needs, sepcifically you can change Flask security settings, security keys, MYSQL settings,and Flask mail.
 
 to run the system, you can use a management command:
 ::
