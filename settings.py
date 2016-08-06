@@ -3,6 +3,7 @@ import os
 
 os_env = os.environ
 
+
 class Config(object):
     SECRET_KEY = '3nF3Rn0'
     APP_DIR = os.path.abspath(os.path.dirname(__file__))  # This directory
@@ -10,13 +11,16 @@ class Config(object):
     ASSETS_DEBUG = False
     DEBUG_TB_ENABLED = False  # Disable Debug toolbar
     DEBUG_TB_INTERCEPT_REDIRECTS = False
-    CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
-    BROKER_URL = 'redis://localhost:6379/10'
-    MONGODB_SETTINGS = {
-        'DB': 'enferno'
-    }
 
-    #security
+    # cache
+    CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
+
+    BROKER_URL = 'redis://localhost:6379/10'
+
+    # database
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:080202ll@localhost/khoaivl?charset=utf8'
+
+    # security
     SECURITY_REGISTERABLE = True
     SECURITY_RECOVERABLE = True
     SECURITY_CONFIRMABLE = False
@@ -27,15 +31,13 @@ class Config(object):
     SECURITY_POST_LOGIN_VIEW = '/account'
     SECURITY_POST_CONFIRM_VIEW = '/account'
 
-
-    #flask mail settings - Mailgun
+    # flask mail settings - Mailgun
     MAIL_SERVER = 'smtp.mailgun.com'
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     MAIL_USERNAME = 'user'
     MAIL_PASSWORD = 'pass'
     SECURITY_EMAIL_SENDER = 'info@level09.com'
-
 
 
 class ProdConfig(Config):
@@ -52,5 +54,3 @@ class DevConfig(Config):
     DEBUG_TB_ENABLED = True
     ASSETS_DEBUG = True  # Don't bundle/minify static assets
     CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
-
-

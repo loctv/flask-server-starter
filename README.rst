@@ -1,17 +1,15 @@
-Project Enferno (NoSQL)
-==================
 
-A framework for the next decade, this is a collection of cutting-edge libraries and tools based on Flask framework.
+This is SQL version modified of Project Enferno (use NoSQL)
 
-http://enferno.io
+Change from Enferno:
+-------------------
+* Move database from MongoEngine to Flask-SqlAlchemy
+* Integrate base Front-end use Bootstrap, Navigation Responsive, already for run production your website.
 
-To learn more about the framework and its use cases, you can follow my articles on Medium :
 
-http://medium.com/@level09/
+=========================
 
-If you are prefer to use a SQL compatible backend, please check out the "sql" branch. 
-
-Tutorials
+Tutorials from Enferno
 -------------
 
 * First steps: create your first website with Enferno : https://medium.com/project-enferno/moonwalking-with-project-enferno-402937628745
@@ -27,18 +25,18 @@ Tutorials
 Prerequisites
 -------------
 
-* MongoDB 
-* Redis
+* MySql
+* Redis (optional for cache)
 * Python Imaging (jpeg/png) support if you would like to work with images
-* Node.js and npm (for front-end stuff)
+* Node.js and npm (optional for front-end stuff)
 
 Quickstart
 ----------
 ::
 
-    $ git clone git@github.com:level09/enferno.git
+    $ git clone https://github.com/loctv/flask-server-starter.git
     
-    $ cd enferno 
+    $ cd flask-server-starter
     
     $ virtualenv env
     
@@ -72,25 +70,14 @@ Features
 --------
 - Flask based
 - Fully working user registration and authentication + user roles via Flask security and Flask Principal
-- Memory caching via Redis and Flask cache
+- Memory caching via Redis/Memcached and Flask cache
 - Simple admin backend via Flask Admin
 - Command line scripting via Flask Script (will be replaced by "click" in the next release)
 - Automatic assets bundling, minification and sass support via gulp
-- Mongodb and Mongoengine ORM
+- MySQL and SqlAlchemy ORM
 - Background tasks via Celery
 - Email integration via Flask Mail
 - Best practices by utilizing Flask blueprints and development/production configuration
-
-
-Showcase
---------
-Some of the websites running on Enferno: 
-
-- `DUKES Hotel <http://dukeshotel.com>`_ 
-- `Dubaiz Properties <http://dubaiz.com>`_ 
-- `Bistro Des Arts <http://bistrodesarts.ae>`_ 
-- `Seven Tides <http://seventides.com>`_ 
-- `Anantara Residences <http://anantararesidences.com>`_ 
 
 
 Inspiration & Credits
@@ -98,7 +85,7 @@ Inspiration & Credits
 
 - `Cookiecutter Flask <https://github.com/sloria/cookiecutter-flask>`_
 - `Flask Security <https://pythonhosted.org/Flask-Security/>`_
-- `Mongoengine <http://mongoengine.org/>`_
+- `Flask-SqlAlchemy <http://flask-sqlalchemy.pocoo.org/2.1/>`_
 - `Flask WTF <https://flask-wtf.readthedocs.org/en/latest/>`_
 - `Flask Admin <https://github.com/mrjoes/flask-admin/>`_
 - `Celery Task Queue <http://www.celeryproject.org/>`_
